@@ -11,7 +11,7 @@ class MessageList extends Component {
     this.scrollToBottom()
   }
   shouldComponentUpdate(nextProps, nextState) {
-    return this.props.messages.length != nextProps.messages.length
+    return this.props.messages.length !== nextProps.messages.length
   }
   scrollToBottom = () => {
     this.messagesEnd.scrollIntoView({ behavior: "smooth" });

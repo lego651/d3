@@ -3,8 +3,16 @@ import { connect } from 'react-redux'
 
 import Chat from '../ChatContainer'
 import Login from '../LoginContainer'
+import { loginUser } from '../../actions'
 
 class Home extends Component {
+  componentDidMount() {
+    const username = sessionStorage.getItem('username');
+    const loginTime = sessionStorage.getItem('loginTime');
+    if(username && loginTime && username.length > 0 && loginTime.length > 0) {
+      this.props.loginUser(username, loginTime);
+    }
+  }
   render() {
     const { username } = this.props
     return (
@@ -22,4 +30,10 @@ class Home extends Component {
 const mapStateToProps = (state) => ({
   username: state.auth.username
 })
-export default connect(mapStateToProps)(Home)
+const mapDispatchToProps = (dispatch) => ({
+  loginUser: (username, time) => dispatch(loginUser(username, time)),
+})
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home)

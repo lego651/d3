@@ -8,6 +8,11 @@ import './style.css'
 
 class Chat extends Component {
   componentDidMount() {
+    // const username = sessionStorage.getItem('username');
+    // const loginTime = sessionStorage.getItem('loginTime');
+    // if(username && loginTime && username.length > 0 && loginTime.length > 0) {
+    //   this.props.loginUser(username, loginTime);
+    // }
     this.interval = setInterval(() => {
       if(this.props.match) {
         const id = this.props.match.params.id
