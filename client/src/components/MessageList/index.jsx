@@ -24,8 +24,7 @@ class MessageList extends Component {
                                           item={message}
                                           username={username} />
         )}
-        <div style={{ float:"left", clear: "both" }}
-          ref={(el) => { this.messagesEnd = el; }}>
+        <div ref={(el) => { this.messagesEnd = el; }}>
         </div>
       </div>
     )

@@ -6,13 +6,13 @@ import Login from '../LoginContainer'
 import { loginUser } from '../../actions'
 
 class Home extends Component {
-  componentDidMount() {
-    const username = sessionStorage.getItem('username');
-    const loginTime = sessionStorage.getItem('loginTime');
-    if(username && loginTime && username.length > 0 && loginTime.length > 0) {
-      this.props.loginUser(username, loginTime);
-    }
-  }
+  // componentDidMount() {
+  //   const username = sessionStorage.getItem('username');
+  //   const loginTime = sessionStorage.getItem('loginTime');
+  //   if(username && loginTime && username.length > 0 && loginTime.length > 0) {
+  //     this.props.loginUser(username, loginTime);
+  //   }
+  // }
   render() {
     const { username } = this.props
     return (
